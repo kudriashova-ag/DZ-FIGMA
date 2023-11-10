@@ -1,0 +1,17 @@
+@mixin border($place, $width, $color, $style) {
+  @if $place == "all" {
+    border: $width $color $style;
+  } @else {
+    border-#{$place}: $width $color $style;
+  }
+}
+
+.expression {
+  @include border(left, 2px, #b1b1b1, solid);
+}
+
+@mixin flex($justify:start) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
